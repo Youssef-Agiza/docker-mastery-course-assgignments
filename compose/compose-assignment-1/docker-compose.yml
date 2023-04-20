@@ -1,0 +1,14 @@
+
+
+services:
+  drupal:
+    image: drupal:9
+    depends_on:
+     - postgres-db
+    ports:
+      - 8080:80
+
+  postgres-db:
+    image: postgres:11
+    environment:
+      - POSTGRES_PASSWORD=pass
